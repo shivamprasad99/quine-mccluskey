@@ -1,0 +1,4 @@
+.input a b c
+.output x, y
+.x abc + ab'c + abc'
+.y (a + b +c)(a + b') (b + c')

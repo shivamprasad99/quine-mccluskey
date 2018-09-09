@@ -1,0 +1,8 @@
+.input a b c d e f
+.output 0 1 2 3 4 5
+.0 (a' + b + d)(b' + d' + f)(a)(c')(d' + f')
+.1 (a + b + c)(b + c')(a + c)
+.2 (b' + c)(a + c' + d)
+.3 (a + d)(d)(a' + c')
+.4 (a + b' + d' + f)(a + c + d + f)(d + f)(a)
+.5 (a' + d' + f')(a + c)(f)
