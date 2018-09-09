@@ -102,6 +102,8 @@ bool notAlreadyThere(Bucket b,Implicant e){
 Bucket* stepB1_12(list<int> minterms,int &size){
     minterms.sort();
     int size_of_bucket = ceil(log2(minterms.back()))+1;
+    if(isPowerOf2(minterms.back()))
+        size_of_bucket++;
     Bucket* pBucket = new Bucket[size_of_bucket];
     for(list<int>::iterator it=minterms.begin(); it != minterms.end(); ++it){
         Implicant e(1);
@@ -194,7 +196,7 @@ Bucket ess_prime_implicants(Bucket primeImp,list<int> minterms){    // this func
                 if(findInImplicant(*it1,minterms)==0)
                     redundant.push_back(it1);   // iterators of all the redundant implicants are in vector
             }
-            for(auto i=redundant.begin();i!=redundant.end();++i){
+            for(vector<list<Implicant>::iterator>::iterator i=redundant.begin();i!=redundant.end();++i){
                 primeImp.implicants.erase(*i);
             }
             redundant.clear();
@@ -229,8 +231,7 @@ string solve(Bucket* pBucket,int size,list<int> minterms,string variables){
     // proceeding to step 2 - finding the prime implicants
     
 
-    Bucket primeImp=prime_implicants(bs,size);
-
+    Bucket primeImp=prime_implicants(bs,size);    
     // step 2 is completed now
     // proceed to find the essential prime implicants
     Bucket essImp=ess_prime_implicants(primeImp,minterms);
@@ -346,8 +347,8 @@ int main(){
         Bucket* pBucket=stepB1_12(minterms,size);
         size1=size;
         cout<<size<<endl;
-        cout<<"Enter "<<size1<<" literals from lsb to msb"<<endl;
-        for(int i=0;i<size1;i++){
+        cout<<"Enter "<<size1-1<<" literals from lsb to msb"<<endl;
+        for(int i=0;i<size1-1;i++){
             char c;
             cin>>c;
             variables+=c;

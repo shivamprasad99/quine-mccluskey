@@ -1,4 +1,20 @@
-.input a b c
-.output x, y
-.x abc + ab'c + abc'
-.y (a + b +c)(a + b') (b + c')
+.input a b c d e f g
+.output 0 1 2 ) 3 ^ 4 5 & 6 7 8 * 9 ! @ # %
+.0 (a' + b + d + g)(b' + d' + f + g')(a + g)(c')(d' + f')
+.1 abcdefg + abcdef' + c'd'e'g'
+.2 a + bg + ab' + bcdg' + cdef + defg' 
+.) (a' + d' + f')(a + c + g)(f + g')
+.3 ab'cg' + acd + cd' + d'e'g'
+.^ (b' + c + g)(a + c' + d)
+.4 a'b'e' + b'eg
+.5 b'd'e + ab'cd'eg + c'deg'
+.& (a + d)(d)(a' + c' + g')
+.6 abcdeg + abc'de + de + ag'
+.7 ag + b'c'd + a'e'f
+.8 abg' + cdg + a + abcd'
+.* (a + b' + d' + f + g')(a + c + d + f)(d + f)(a)
+.9 bg' + a'c'd' + acd + bdg
+.! ab' + cd + a + abcd'
+.@ bg + a'c'd' + acd + bd
+.# bcg' + a'd'g' + a'c'dg
+.% (a + b + c + g')(b + c')(a + c)
